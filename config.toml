@@ -1,11 +1,16 @@
 title = "Hugo Netlify Starter"
 disableKinds = ["taxonomy", "taxonomyTerm"]
+copyright = "Cloud Native Computing Foundation"
 
 [params]
 font_awesome_version = "5.12.0"
+description = "Boilerplate for building beautiful websites"
+
+[params.logos]
+navbar = "cncf-color.png"
 
 [[params.fonts]]
-name = "Open Sans"
+name = "Fira Sans"
 sizes = [300, 400, 600, 700]
 type = "sans_serif"
 
@@ -13,3 +18,8 @@ type = "sans_serif"
 name = "Roboto Mono"
 sizes = [300, 400, 600, 700]
 type = "monospace"
+
+[[menu.main]]
+name = "CNCF"
+url = "https://cncf.io"
+weight = 1

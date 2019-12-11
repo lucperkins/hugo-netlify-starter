@@ -4,8 +4,15 @@
   <head>
     {{ partial "css.html" . }}
   </head>
-  <body>
-    {{ block "main" . }}
-    {{ end }}
+  <body class="is-page has-navbar-fixed-top">
+    <main class="is-main">
+      {{ partial "navbar.html" . }}
+
+      {{ block "main" . }}
+      {{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+    {{ partial "javascript.html" }}
   </body>
 </html>

@@ -15,12 +15,15 @@
 {{ end }}
 
 // Site-specific variables here
+$cncf-blue: #426cab
+$cncf-green: #76c5d5
 
 // Initial Bulma imports
 @import "bulma/sass/utilities/initial-variables"
 @import "bulma/sass/utilities/functions"
 
 // Bulma-specific overrides
+$primary: $cncf-blue
 
 // Font overrides
 {{ if $fonts }}
@@ -37,4 +40,11 @@ $family-monospace: "{{ . }}", monospace
 
 // Final Bulma imports
 @import "bulma/sass/utilities/derived-variables"
+
+// Bulma variable overrdides that require derived variables like $dark
+$footer-background-color: $dark
+
 @import "bulma/bulma"
+
+// Custom Sass imports
+@import "helpers"
