@@ -9,6 +9,16 @@ description = "Boilerplate for building beautiful websites"
 [params.logos]
 navbar = "cncf-color.png"
 
+[[params.colors.extra]]
+name = "twitter-blue"
+hex = "#00aced"
+
+[[params.social]]
+name = "Twitter"
+color = "twitter-blue"
+url = "https://twitter.com/CloudNativeFdn"
+icon = "fab fa-twitter"
+
 [[params.fonts]]
 name = "Fira Sans"
 sizes = [300, 400, 600, 700]

@@ -1,7 +1,8 @@
-{{ $home  := site.BaseURL }}
-{{ $title := site.Title }}
-{{ $logo  := site.Params.logos.navbar }}
-{{ $menu  := site.Menus.main }}
+{{ $home   := site.BaseURL }}
+{{ $title  := site.Title }}
+{{ $logo   := site.Params.logos.navbar }}
+{{ $menu   := site.Menus.main }}
+{{ $social := site.Params.social }}
 <nav class="navbar is-white is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
@@ -23,14 +24,20 @@
       {{ end }}
     </div>
 
-    {{ with $menu }}
+    {{ if or $social $menu }}
     <div class="navbar-menu" id="navbar-menu">
       <div class="navbar-end">
+        {{ with $menu }}
         {{ range . }}
         {{ $isExternal := hasPrefix .URL "http" }}
         <a class="navbar-item" href="{{ .URL }}"{{ if $isExternal }} target="_blank"{{ end }}>
           {{ .Name }}
         </a>
+        {{ end }}
+        {{ end }}
+
+        {{ with $social }}
+        {{ partial "social-buttons.html" . }}
         {{ end }}
       </div>
     </div>
